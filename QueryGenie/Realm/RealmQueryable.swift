@@ -24,8 +24,7 @@ public protocol RealmQueryable: GenericQueryable {
 extension RealmQueryable {
     
     public final func count() -> Int {
-        // TODO: This is broken. wont respect filters
-        return realm?.objects(Element.self).count ?? 0
+        return Int(objects().count)        
     }
     
 }
