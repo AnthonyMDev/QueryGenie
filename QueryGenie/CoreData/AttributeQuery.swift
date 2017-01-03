@@ -40,42 +40,44 @@ public struct AttributeQuery<T: NSDictionary>: AttributeQueryProtocol {
 
 }
 
-//// MARK: - Table extensions
-//
-//extension Table {
-//    
-//    // one attribute
-//    public func select<P, A: AttributeProtocol>(_ closure: (T.Type) -> A) -> AttributeQuery<P> where A.ValueType == P {
-//        var attributeQuery = AttributeQuery<P>(
-//            context: self.context,
-//            entityDescription: self.entityDescription,
-//            offset: self.offset,
-//            limit: self.limit,
-//            batchSize: self.batchSize,
-//            predicate: self.predicate,
-//            sortDescriptors: self.sortDescriptors
-//        )
-//        
-//        attributeQuery.propertiesToFetch.append(closure(T.self).___name)
-//        
-//        return attributeQuery
-//    }
-//
-//    // more than one attribute
-//    public func select(_ propertiesToFetch: [String]) -> AttributeQuery<NSDictionary> {
-//        var attributeQuery = AttributeQuery<NSDictionary>(
-//            context: self.context,
-//            entityDescription: self.entityDescription,
-//            offset: self.offset,
-//            limit: self.limit,
-//            batchSize: self.batchSize,
-//            predicate: self.predicate,
-//            sortDescriptors: self.sortDescriptors
-//        )
-//        
-//        attributeQuery.propertiesToFetch = propertiesToFetch
-//        
-//        return attributeQuery
-//    }
-//
-//}
+/*
+ *  MARK: - Table Extensions
+ */
+
+extension Table {
+    
+    // One Attribute
+    public func select<P, A: AttributeProtocol>(_ closure: (T.Type) -> A) -> AttributeQuery<P> where A.ValueType == P {
+        var attributeQuery = AttributeQuery<P>(
+            context: self.context,
+            entityDescription: self.entityDescription,
+            offset: self.offset,
+            limit: self.limit,
+            batchSize: self.batchSize,
+            predicate: self.predicate,
+            sortDescriptors: self.sortDescriptors
+        )
+        
+        attributeQuery.propertiesToFetch.append(closure(T.self).___name)
+        
+        return attributeQuery
+    }
+
+    // Multiple Attributes
+    public func select(_ propertiesToFetch: [String]) -> AttributeQuery<NSDictionary> {
+        var attributeQuery = AttributeQuery<NSDictionary>(
+            context: self.context,
+            entityDescription: self.entityDescription,
+            offset: self.offset,
+            limit: self.limit,
+            batchSize: self.batchSize,
+            predicate: self.predicate,
+            sortDescriptors: self.sortDescriptors
+        )
+        
+        attributeQuery.propertiesToFetch = propertiesToFetch
+        
+        return attributeQuery
+    }
+
+}

@@ -17,7 +17,9 @@ public protocol AttributeQueryProtocol: CoreDataQueryable {
     
 }
 
-// MARK: -
+/*
+ *  MARK: - Distinct
+ */
 
 extension AttributeQueryProtocol {
     
@@ -82,8 +84,9 @@ extension AttributeQueryProtocol where Self.Element: NSDictionary {
     
 }
 
-
-// MARK: - CoreDataQueryable
+/*
+ *  MARK: - CoreDataQueryable
+ */
 
 extension AttributeQueryProtocol where Self.Element: NSDictionary {
     
