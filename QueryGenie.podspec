@@ -29,7 +29,13 @@ Pod::Spec.new do |s|
         
         ss.dependency 'RealmSwift', '~> 2.1'
     end
-    
+
+    s.subspec 'RealmGenerator' do |ss|
+        ss.source_files = 'QueryGenie/RealmGenerator/*.swift'            
+        
+        ss.dependency 'Realm', '~> 2.1'
+    end
+
     s.subspec 'CoreData' do |ss|
         ss.source_files = 'QueryGenie/CoreData/*.swift'
         

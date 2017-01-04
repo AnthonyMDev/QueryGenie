@@ -10,6 +10,8 @@
 		1473DB08B0CA719DEC13951A /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0AEA48D33BC44207AF753B /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework */; };
 		3066026C24FFB4CD5FFF20C4 /* Pods_AllPods_QueryGenie_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0320041F9A88C17C89307AB2 /* Pods_AllPods_QueryGenie_iOS.framework */; };
 		6CA34934C19A170F7A8EA13E /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40A600BC71F6633C169A3F2 /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework */; };
+		9214C7DC1E1D89020097D8B2 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */; };
+		9214C7DD1E1D89020097D8B2 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */; };
 		92B1DFBC1E158BB9004337CF /* QueryGenieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFBB1E158BB9004337CF /* QueryGenieTests.swift */; };
 		92B1DFBE1E158BB9004337CF /* QueryGenie.h in Headers */ = {isa = PBXBuildFile; fileRef = 92B1DFB01E158BB9004337CF /* QueryGenie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92B1DFCC1E159264004337CF /* Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFCA1E159264004337CF /* Sortable.swift */; };
@@ -82,6 +84,8 @@
 		715D8CE289F5136EF13CB2B6 /* Pods-AllPods-QueryGenie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllPods-QueryGenie.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllPods-QueryGenie/Pods-AllPods-QueryGenie.release.xcconfig"; sourceTree = "<group>"; };
 		7C727A938D80DA3EF5EAFD15 /* Pods-import_pods-QueryGenieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-import_pods-QueryGenieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-import_pods-QueryGenieTests/Pods-import_pods-QueryGenieTests.release.xcconfig"; sourceTree = "<group>"; };
 		846A688FA17EEAEE8DC0E0C1 /* Pods-Tests-QueryGenieTests.OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-QueryGenieTests.OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-QueryGenieTests.OSX/Pods-Tests-QueryGenieTests.OSX.release.xcconfig"; sourceTree = "<group>"; };
+		9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmGenerator.swift; sourceTree = "<group>"; };
+		9214C7ED1E1D8B640097D8B2 /* QueryGenieRealmGenerator.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = QueryGenieRealmGenerator.podspec; sourceTree = "<group>"; };
 		92B1DFAD1E158BB9004337CF /* QueryGenie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QueryGenie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B1DFB01E158BB9004337CF /* QueryGenie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueryGenie.h; sourceTree = "<group>"; };
 		92B1DFB11E158BB9004337CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -210,6 +214,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9214C7DA1E1D88FA0097D8B2 /* RealmGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */,
+			);
+			path = RealmGenerator;
+			sourceTree = "<group>";
+		};
 		92B1DFA31E158BB9004337CF = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +259,7 @@
 				92B1DFD21E1592B7004337CF /* NSPredicateExtensions.swift */,
 				92B1E0501E15A8F6004337CF /* Error.swift */,
 				92B1DFCE1E159286004337CF /* Realm */,
+				9214C7DA1E1D88FA0097D8B2 /* RealmGenerator */,
 				92B1E0401E15A680004337CF /* CoreData */,
 				92B1DFCF1E159295004337CF /* Supporting Files */,
 			);
@@ -266,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				92B1DFC81E158BF3004337CF /* QueryGenie.podspec */,
+				9214C7ED1E1D8B640097D8B2 /* QueryGenieRealmGenerator.podspec */,
 				92B1DFC91E1591FD004337CF /* Podfile */,
 				92B1DFE51E15934F004337CF /* ACKNOWLEDGMENTS.md */,
 				92B1DFE61E159356004337CF /* LICENSE */,
@@ -657,6 +671,7 @@
 				92B1E04B1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0571E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
 				92B1DFDD1E1592C7004337CF /* GenericQueryable.swift in Sources */,
+				9214C7DC1E1D89020097D8B2 /* RealmGenerator.swift in Sources */,
 				92B1E0541E15ABD9004337CF /* RealmError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +707,7 @@
 				92B1E04C1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0581E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
 				92B1DFF61E159776004337CF /* GenericQueryable.swift in Sources */,
+				9214C7DD1E1D89020097D8B2 /* RealmGenerator.swift in Sources */,
 				92B1E0551E15ABD9004337CF /* RealmError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
