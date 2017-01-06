@@ -83,7 +83,7 @@ public struct RealmGenerator {
     private static func objectAttributes(for object: RLMObjectSchema) -> String {
         var lines = [String]()
         
-        for property in object.properties {
+        for property in object.allProperties {
             var attribute = self.attribute(for: property)
             if let primaryKey = object.primaryKeyProperty, property.isEqual(to: primaryKey) {
                 attribute += " // Primary Key"
@@ -126,7 +126,7 @@ public struct RealmGenerator {
     private static func attributeExtensionAttributes(for object: RLMObjectSchema) -> String {
         var lines = [String]()
         
-        for property in object.properties {
+        for property in object.allProperties {
             var attribute = self.attributeExtensionAttribute(for: property)
             if let primaryKey = object.primaryKeyProperty, property.isEqual(to: primaryKey) {
                 attribute += " // Primary Key"
@@ -155,4 +155,13 @@ public struct RealmGenerator {
                                                                                                               "\n" +
         "}"
     }
+}
+
+fileprivate extension RLMObjectSchema {
+    
+    var allProperties: [RLMProperty] {
+        let computedProperties = value(forKey: "computedProperties") as? [RLMProperty] ?? []
+        return properties + computedProperties
+    }
+    
 }
