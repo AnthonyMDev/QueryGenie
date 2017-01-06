@@ -47,7 +47,7 @@ public struct RealmGenerator {
                           "}",
                           attributeExtensionHeader(for: object),
                           attributeExtensionAttributes(for: object),
-                          "}"
+                          "}\n"
                           ]
         
         return components.joined(separator: "\n\n")
