@@ -47,8 +47,7 @@ public struct RealmGenerator {
                           "}",
                           attributeExtensionHeader(for: object),
                           attributeExtensionAttributes(for: object),
-                          "}",
-                          realmExtensions(for: object)
+                          "}"
                           ]
         
         return components.joined(separator: "\n\n")
@@ -143,18 +142,7 @@ public struct RealmGenerator {
         return "    public var \(property.name): QueryGenie.\(attributeType)<\(self.valueType(for: property))> " +
         "{ return \(attributeType)(\"\(property.name)\", self) }"
     }
-    
-    private static func realmExtensions(for object: RLMObjectSchema) -> String {
-       return
-        "// MARK: - Realm Extensions"                                                                       + "\n" +
-                                                                                                              "\n" +
-        "extension Realm {"                                                                                 + "\n" +
-                                                                                                              "\n" +
-        "   public var \(object.className.lowercased().appending("s")): Results<\(object.className)> " +
-        "{ return objects(\(object.className).self) }"                                                      + "\n" +
-                                                                                                              "\n" +
-        "}"
-    }
+
 }
 
 fileprivate extension RLMObjectSchema {
