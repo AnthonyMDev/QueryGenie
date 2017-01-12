@@ -44,11 +44,13 @@ public struct RealmGenerator {
                           importStatements,
                           objectExtensionHeader(for: object),
                           objectAttributes(for: object),
-                          "}",
                           attributeExtensionHeader(for: object),
                           attributeExtensionAttributes(for: object),
-                          "}\n"
                           ]
+        
+        if let uniqueIdentifiableExtension = uniqueIdentifiableExtension(for: object) {
+            components.append(uniqueIdentifiableExtension)
+        }
         
         return components.joined(separator: "\n\n")
     }
@@ -90,6 +92,9 @@ public struct RealmGenerator {
             lines.append(attribute)
         }
         
+        lines.append("")
+        lines.append("}")
+        
         return lines.joined(separator: "\n")
     }
     
@@ -119,7 +124,7 @@ public struct RealmGenerator {
         return
             "// MARK: - AttributeProtocol Extensions - \(object.className)"                             + "\n" +
                                                                                                           "\n" +
-                "extension QueryGenie.AttributeProtocol where Self.ValueType: \(object.className) {"
+            "extension QueryGenie.AttributeProtocol where Self.ValueType: \(object.className) {"
     }
     
     private static func attributeExtensionAttributes(for object: RLMObjectSchema) -> String {
@@ -133,6 +138,9 @@ public struct RealmGenerator {
             lines.append(attribute)
         }
         
+        lines.append("")
+        lines.append("}")
+        
         return lines.joined(separator: "\n")
     }
     
@@ -141,6 +149,19 @@ public struct RealmGenerator {
         let valueType = property.type
         return "    public var \(property.name): QueryGenie.\(attributeType)<\(self.valueType(for: property))> " +
         "{ return \(attributeType)(\"\(property.name)\", self) }"
+    }
+    
+    private static func uniqueIdentifiableExtension(for object: RLMObjectSchema) -> String? {
+        guard let primaryKeyProperty = object.primaryKeyProperty else { return nil }
+        
+        return
+            "// MARK: - UniqueIdentifiable - \(object.className)"                                       + "\n" +
+                                                                                                          "\n" +
+            "extension \(object.className): UniqueIdentifiable {"                                       + "\n" +
+                                                                                                          "\n" +
+            "   public typealias UniqueIdentifierType = \(self.valueType(for: primaryKeyProperty))"     + "\n" +
+                                                                                                          "\n" +
+            "}"
     }
 
 }

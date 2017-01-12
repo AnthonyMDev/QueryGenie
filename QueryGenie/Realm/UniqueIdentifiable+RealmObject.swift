@@ -17,8 +17,8 @@ import RealmSwift
 /// The value returned by the `Object` class function `primaryKey()` is used to derive the value.
 extension UniqueIdentifiable where Self: Object {
     
-    public static var primaryKey: String {
-        return Self.primaryKey() ?? ""
+    public static var primaryKey: Attribute<String> {
+        return Attribute(Self.primaryKey() ?? "")
     }
     
 }
