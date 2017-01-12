@@ -50,7 +50,7 @@ extension AttributeProtocol {
     
     internal final var ___comparisonPredicateOptions: NSComparisonPredicate.Options {
         if Self.ValueType.self is StringProtocol.Type {
-            return [.caseInsensitive, .diacriticInsensitive]
+            return [.caseInsensitive]
         }
         else {
             return NSComparisonPredicate.Options()
