@@ -67,17 +67,15 @@ public struct RealmGenerator {
     }
     
     private static let importStatements: String = {
-        return
-        "import Foundation"     + "\n" +
+        return "import Foundation"     + "\n" +
         "\n" +
         "import RealmSwift"     + "\n" +
         "import QueryGenie"
     }()
     
     private static func objectExtensionHeader(for object: RLMObjectSchema) -> String {
-        return
-        "// MARK: - \(object.className) Query Attributes"           + "\n" +
-                                                                      "\n" +
+        return "// MARK: - \(object.className) Query Attributes"           + "\n" +
+                                                                             "\n" +
         "extension \(object.className) {"
     }
     
@@ -100,7 +98,6 @@ public struct RealmGenerator {
     
     private static func attribute(for property: RLMProperty) -> String {
         let attributeType = property.optional ? "NullableAttribute" : "Attribute"
-        let valueType = property.type
         return "    public static let \(property.name) = QueryGenie.\(attributeType)<\(self.valueType(for: property))>(\"\(property.name)\")"
     }
     
@@ -146,7 +143,6 @@ public struct RealmGenerator {
     
     private static func attributeExtensionAttribute(for property: RLMProperty) -> String {
         let attributeType = property.optional ? "NullableAttribute" : "Attribute"
-        let valueType = property.type
         return "    public var \(property.name): QueryGenie.\(attributeType)<\(self.valueType(for: property))> " +
         "{ return \(attributeType)(\"\(property.name)\", self) }"
     }
