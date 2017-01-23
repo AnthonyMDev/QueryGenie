@@ -27,4 +27,22 @@ extension RealmQueryable {
         return Int(objects().count)        
     }
     
+    public final func firstOrCreated(_ predicateClosure: (Self.Element.Type) -> NSComparisonPredicate) throws -> Self.Element {
+        let predicate = predicateClosure(Self.Element.self)
+        
+        if let entity = self.filter(predicate).first() {
+            return entity
+            
+        } else {
+            guard let realm = realm else { throw RealmError.noRealm }
+            
+            let attributeName = predicate.leftExpression.keyPath
+            let value: Any = predicate.rightExpression.constantValue!
+            
+            let entity = realm.create(Element.self, value: [attributeName: value], update: true)
+            
+            return entity
+        }
+    }
+    
 }
