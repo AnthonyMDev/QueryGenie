@@ -19,7 +19,7 @@ public protocol UniqueIdentifiable: Sortable, Equatable {
     /// The type of the `uniqueIdentifier`.
     associatedtype UniqueIdentifierType: Hashable
     
-    /// The primary key on instances of the object used to access the unique identifier.
+    /// The key on instances of the object used to access the unique identifier.
     static var primaryKey: Attribute<UniqueIdentifierType> { get }
     
     /// The unique identifier for the object.
