@@ -23,7 +23,7 @@ public protocol UniqueIdentifiable: Sortable, Equatable {
     static var primaryKey: Attribute<UniqueIdentifierType> { get }
     
     /// The unique identifier for the object.
-    var uniqueIdentifier: UniqueIdentifierType { get }
+    var uniqueIdentifier: UniqueIdentifierType { get set }
     
 }
 
@@ -43,28 +43,6 @@ public extension UniqueIdentifiable where Self.UniqueIdentifierType: Comparable 
     
     public func isOrderedBefore(_ element: Self) -> Bool {
         return self.uniqueIdentifier < element.uniqueIdentifier
-    }
-    
-}
-
-/*
- *  MARK: - Default Implementation Extensions
- */
-
-// MARK: NSObject
-public extension UniqueIdentifiable where Self: NSObject {
-    
-    var uniqueIdentifier: UniqueIdentifierType {
-        return value(forKey: type(of: self).primaryKey.___name) as! UniqueIdentifierType
-    }
-    
-}
-
-// MARK: Collection
-public extension UniqueIdentifiable where Self: Collection, Self.Index == String {
-    
-    var uniqueIdentifier: Self.Iterator.Element {
-        return self[type(of: self).primaryKey.___name]
     }
     
 }

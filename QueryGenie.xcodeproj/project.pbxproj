@@ -12,6 +12,8 @@
 		6CA34934C19A170F7A8EA13E /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40A600BC71F6633C169A3F2 /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework */; };
 		9214C7DC1E1D89020097D8B2 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */; };
 		9214C7DD1E1D89020097D8B2 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */; };
+		92AEC58B1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEC58A1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift */; };
+		92AEC58C1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AEC58A1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift */; };
 		92B1DFBC1E158BB9004337CF /* QueryGenieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFBB1E158BB9004337CF /* QueryGenieTests.swift */; };
 		92B1DFBE1E158BB9004337CF /* QueryGenie.h in Headers */ = {isa = PBXBuildFile; fileRef = 92B1DFB01E158BB9004337CF /* QueryGenie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92B1DFCC1E159264004337CF /* Sortable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFCA1E159264004337CF /* Sortable.swift */; };
@@ -86,6 +88,7 @@
 		846A688FA17EEAEE8DC0E0C1 /* Pods-Tests-QueryGenieTests.OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-QueryGenieTests.OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-QueryGenieTests.OSX/Pods-Tests-QueryGenieTests.OSX.release.xcconfig"; sourceTree = "<group>"; };
 		9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmGenerator.swift; sourceTree = "<group>"; };
 		9214C7ED1E1D8B640097D8B2 /* QueryGenieRealmGenerator.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = QueryGenieRealmGenerator.podspec; sourceTree = "<group>"; };
+		92AEC58A1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UniqueIdentifiable+NSManagedObject.swift"; sourceTree = "<group>"; };
 		92B1DFAD1E158BB9004337CF /* QueryGenie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QueryGenie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B1DFB01E158BB9004337CF /* QueryGenie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueryGenie.h; sourceTree = "<group>"; };
 		92B1DFB11E158BB9004337CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -316,6 +319,7 @@
 				92B1E0471E15A6E5004337CF /* AttributeQuery.swift */,
 				92B1E04A1E15A6ED004337CF /* Table.swift */,
 				92B1E04D1E15A72D004337CF /* AttributeQueryProtocol.swift */,
+				92AEC58A1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -670,6 +674,7 @@
 				92B1E0511E15A8F6004337CF /* Error.swift in Sources */,
 				92B1E04B1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0571E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
+				92AEC58B1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */,
 				92B1DFDD1E1592C7004337CF /* GenericQueryable.swift in Sources */,
 				9214C7DC1E1D89020097D8B2 /* RealmGenerator.swift in Sources */,
 				92B1E0541E15ABD9004337CF /* RealmError.swift in Sources */,
@@ -706,6 +711,7 @@
 				92B1E0521E15A8F6004337CF /* Error.swift in Sources */,
 				92B1E04C1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0581E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
+				92AEC58C1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */,
 				92B1DFF61E159776004337CF /* GenericQueryable.swift in Sources */,
 				9214C7DD1E1D89020097D8B2 /* RealmGenerator.swift in Sources */,
 				92B1E0551E15ABD9004337CF /* RealmError.swift in Sources */,
