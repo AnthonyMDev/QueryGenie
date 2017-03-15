@@ -36,3 +36,19 @@ extension Queryable where Self: Enumerable {
     }
     
 }
+
+extension Collection where Self: Queryable {
+    
+    public final var isEmpty: Bool {
+        return count() == 0
+    }
+    
+}
+
+extension Collection where Self: Queryable & Enumerable {
+    
+    public final var isEmpty: Bool {
+        return take(1).count() == 0
+    }
+    
+}
