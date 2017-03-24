@@ -26,6 +26,10 @@ public struct Attribute<T>: AttributeProtocol {
         self.___name = parentAttribute.___name + "." + name
     }
     
+    public init<T>(_ attribute: Attribute<T>, _ parentAttribute: NamedAttributeProtocol) {
+        self.init(attribute.___name, parentAttribute)
+    }
+    
 }
 
 /*
@@ -45,6 +49,10 @@ public struct NullableAttribute<T>: NullableAttributeProtocol {
     
     public init(_ name: String, _ parentAttribute: NamedAttributeProtocol) {
         self.___name = parentAttribute.___name + "." + name
+    }
+    
+    public init<T>(_ attribute: NullableAttribute<T>, _ parentAttribute: NamedAttributeProtocol) {
+        self.init(attribute.___name, parentAttribute)
     }
     
 }
