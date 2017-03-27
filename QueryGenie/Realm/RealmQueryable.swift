@@ -17,6 +17,8 @@ public protocol RealmQueryable: GenericQueryable {
     
     var realm: Realm? { get }
     
+    func setValue(_ value: Any?, forKey key: String)
+    
 }
 
 // MARK: - Enumerable
@@ -43,6 +45,22 @@ extension RealmQueryable {
             
             return entity
         }
+    }
+    
+    private final func setValue<T>(_ value: T, for attribute: Attribute<T>) {
+        setValue(value, forKey: attribute.___name)
+    }
+    
+    public final func setValue<T>(_ value: T, for attributeClosure: (Self.Element.Type) -> Attribute<T>) {
+        setValue(value, for: attributeClosure(Self.Element.self))
+    }
+    
+    private final func setValue<T>(_ value: T?, for attribute: NullableAttribute<T>) {
+        setValue(value, forKey: attribute.___name)
+    }
+    
+    public final func setValue<T>(_ value: T?, for attributeClosure: (Self.Element.Type) -> NullableAttribute<T>) {
+        setValue(value, for: attributeClosure(Self.Element.self))
     }
     
 }
