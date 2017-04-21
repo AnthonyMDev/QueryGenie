@@ -1,15 +1,13 @@
 //
 //  TableProtocol.swift
-//  ZRCoreData
 //
-//  Copyright (c) 2016 App-Order, LLC. All rights reserved.
+//  Created by Anthony Miller on 1/4/17.
 //
 
 import Foundation
 import CoreData
 
-// TODO: Document
-
+// A query that can be executed to fetch a collection of core data objects.
 public protocol TableProtocol: CoreDataQueryable {
     
 }

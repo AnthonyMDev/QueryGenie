@@ -2,13 +2,12 @@
 //  ResultsProtocol.swift
 //
 //  Created by Anthony Miller on 12/28/16.
-//  Copyright © 2016 App-Order. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-// TODO: Document
+/// A query that is backed by a Realm `Results` object.
 public protocol ResultsProtocol: RealmQueryable, SortedQueryable {
     
     func sum<U: AddableType>(ofProperty: String) -> U

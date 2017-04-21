@@ -1,16 +1,14 @@
 //
 //  RealmQueryable.swift
-//  ZRModels
 //
 //  Created by Anthony Miller on 12/28/16.
-//  Copyright © 2016 App-Order. All rights reserved.
 //
 
 import Foundation
 
 import RealmSwift
 
-// TODO: Document
+/// A query that can be executed to retrieve Realm `Objects`.
 public protocol RealmQueryable: GenericQueryable {
     
     associatedtype Element: Object

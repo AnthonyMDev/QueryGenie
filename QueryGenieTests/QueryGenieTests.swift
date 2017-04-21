@@ -3,7 +3,6 @@
 //  QueryGenieTests
 //
 //  Created by Anthony Miller on 12/29/16.
-//  Copyright © 2016 Anthony Miller. All rights reserved.
 //
 
 import XCTest

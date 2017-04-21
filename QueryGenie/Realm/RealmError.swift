@@ -2,13 +2,13 @@
 //  RealmError.swift
 //
 //  Created by Anthony Miller on 12/29/16.
-//  Copyright (c) 2016 App-Order, LLC. All rights reserved.
 //
 
 import Foundation
 
-// TODO: Document
-
+/// Errors that can be thrown when executing a query on a `RealmQueryable` entity.
+///
+/// - noRealm: The entity is not in a `Realm`.
 public enum RealmError: Swift.Error {
     
     case noRealm

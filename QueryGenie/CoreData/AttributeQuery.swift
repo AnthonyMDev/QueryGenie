@@ -1,16 +1,14 @@
 //
 //  AttributeQuery.swift
-//  ZRCoreData
 //
-//  Copyright (c) 2016 App-Order, LLC. All rights reserved.
+//  Created by Anthony Miller on 1/4/17.
 //
 
 import Foundation
 import CoreData
 
-// TODO: Document
-
-public struct AttributeQuery<T: NSDictionary>: AttributeQueryProtocol {
+/// A concrete query that can be executed to fetch a dictionary of properties on core data objects.
+public final struct AttributeQuery<T: NSDictionary>: AttributeQueryProtocol {
     
     public typealias Element = T
     

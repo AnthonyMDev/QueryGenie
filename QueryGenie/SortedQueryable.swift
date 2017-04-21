@@ -2,13 +2,11 @@
 //  SortedQueryable.swift
 //
 //  Created by Anthony Miller on 12/29/16.
-//  Copyright © 2016 App-Order. All rights reserved.
 //
 
 import Foundation
 
-// TODO: Document
-
+/// A query that can be sorted.
 public protocol SortedQueryable: Queryable {
     
     /// Sorts the query by the given key path.
@@ -25,7 +23,13 @@ public protocol SortedQueryable: Queryable {
 }
 
 extension SortedQueryable {
-    
+        
+    /// Sorts the query by an attribute.
+    ///
+    /// - Parameters:
+    ///   - attribute: The attribute to sort the query by.
+    ///   - ascending: `true` to sort ascending. `false` to sort descending.
+    /// - Returns: A sorted copy of the receiver.
     public final func sorted<A: AttributeProtocol>(by attribute: A, ascending: Bool) -> Self {
         return sorted(by: attribute.___name, ascending: ascending)
     }

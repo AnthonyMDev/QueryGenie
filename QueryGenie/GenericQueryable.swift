@@ -2,18 +2,23 @@
 //  GenericQueryable.swift
 //
 //  Created by Anthony Miller on 12/28/16.
-//  Copyright © 2016 App-Order. All rights reserved.
 //
 
 import Foundation
 
-// TODO: Document
+/// A query of items of a generic type `Element`.
 public protocol GenericQueryable: Queryable {
     
     associatedtype Element = Self.Iterator.Element
     
+    /// Executes the query.
+    ///
+    /// - Returns: A collection of the items resulting from the query.
     func objects() -> AnyCollection<Element>
     
+    /// Executes the query, taking the first item in the query.
+    ///
+    /// - Returns: The first item resulting from the query.
     func first() -> Self.Element?
     
 }
@@ -66,6 +71,12 @@ extension GenericQueryable where Self.Element: UniqueIdentifiable, Self.Element.
 
 extension GenericQueryable where Self: SortedQueryable {
     
+    /// Sorts the query by an attribute.
+    ///
+    /// - Parameters:
+    ///   - ascending: `true` to sort ascending. `false` to sort descending.
+    ///   - orderingClosure: The closure returning the attribute on the `Element.Type` to sort by.
+    /// - Returns: A sorted copy of the receiver.
     public final func sortedBy<A: AttributeProtocol, V>(ascending: Bool = true, _ orderingClosure: (Self.Element.Type) -> A) -> Self where A.ValueType == V {
         return self.sorted(by: orderingClosure(Self.Element.self), ascending: ascending)
     }
@@ -78,10 +89,18 @@ extension GenericQueryable where Self: SortedQueryable {
 
 extension GenericQueryable {
     
+    /// Determines if any items match the given query.
+    ///
+    /// - Parameter predicateClosure: The closure returning a predicate to filter the query by.
+    /// - Returns: `true` if any items match the query, otherwise `false`.
     public final func any(_ predicateClosure: (Self.Element.Type) -> NSPredicate) -> Bool {
         return !self.filter(predicateClosure(Self.Element.self)).isEmpty
     }
     
+    /// Determines if no items match the given query.
+    ///
+    /// - Parameter predicateClosure: The closure returning a predicate to filter the query by.
+    /// - Returns: `false` if any items match the query, otherwise `true`.
     public final func none(_ predicateClosure: (Self.Element.Type) -> NSPredicate) -> Bool {
         return self.filter(predicateClosure(Self.Element.self)).isEmpty
     }
@@ -90,10 +109,18 @@ extension GenericQueryable {
 
 extension GenericQueryable where Self: Enumerable {
     
+    /// Determines if any items match the given query.
+    ///
+    /// - Parameter predicateClosure: The closure returning a predicate to filter the query by.
+    /// - Returns: `true` if any items match the query, otherwise `false`.
     public final func any(_ predicateClosure: (Self.Element.Type) -> NSPredicate) -> Bool {
         return !self.filter(predicateClosure(Self.Element.self)).isEmpty
     }
     
+    /// Determines if no items match the given query.
+    ///
+    /// - Parameter predicateClosure: The closure returning a predicate to filter the query by.
+    /// - Returns: `false` if any items match the query, otherwise `true`.
     public final func none(_ predicateClosure: (Self.Element.Type) -> NSPredicate) -> Bool {
         return self.filter(predicateClosure(Self.Element.self)).isEmpty
     }

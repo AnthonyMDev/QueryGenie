@@ -1,13 +1,14 @@
 //
 //  Error.swift
-//  ZRCoreData
 //
-//  Copyright (c) 2016 App-Order, LLC. All rights reserved.
+//  Created by Anthony Miller on 12/28/16.
 //
 
 import Foundation
 
-// TODO: Document
+/// An error that can be thrown by a query.
+///
+/// - unexpectedValue: The type of the resulting value from a query was not the expected type.
 public enum Error: Swift.Error {
     case unexpectedValue(Any)
 }

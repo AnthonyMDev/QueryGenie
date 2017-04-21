@@ -2,7 +2,6 @@
 //  AttributeProtocol.swift
 //
 //  Created by Anthony Miller on 12/28/16.
-//  Copyright (c) 2016 App-Order, LLC. All rights reserved.
 //
 
 import Foundation

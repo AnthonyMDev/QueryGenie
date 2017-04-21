@@ -2,7 +2,6 @@
 //  UniqueIdentifiable+RealmObject.swift
 //
 //  Created by Anthony Miller on 12/29/16.
-//  Copyright (c) 2016 App-Order, LLC. All rights reserved.
 //
 
 import Foundation
@@ -31,6 +30,8 @@ extension UniqueIdentifiable where Self: Object, Self.UniqueIdentifierType == In
     
 }
 
+/// Provides default implementation for `uniqueIdentifier` on an `Object` that conforms 
+/// to `UniqueIdentifiable`.
 extension UniqueIdentifiable where Self: Object {
     
     fileprivate var primaryKeyForKVC: String { return type(of: self).primaryKey.___name }

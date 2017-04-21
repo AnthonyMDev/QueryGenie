@@ -2,7 +2,6 @@
 //  Results+ResultsProtocol.swift
 //
 //  Created by Anthony Miller on 12/29/16.
-//  Copyright © 2016 App-Order. All rights reserved.
 //
 
 import Foundation

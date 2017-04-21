@@ -2,17 +2,20 @@
 //  Queryable.swift
 //
 //  Created by Anthony Miller on 12/28/16.
-//  Copyright © 2016 App-Order. All rights reserved.
 //
 
 import Foundation
 
-// TODO: Document
-
+/// A `Sequence` that can be queried using `NSPredicate` filters.
 public protocol Queryable: Sequence {
     
+    /// Filters the query items using the given `NSPredicate`.
+    ///
+    /// - Parameter predicate: The `NSPredicate` to filter the query by.
+    /// - Returns: A copy of the receiver with the new filter query added.
     func filter(_ predicate: NSPredicate) -> Self
     
+    /// The count of items currently returned by the query.
     func count() -> Int
     
 }

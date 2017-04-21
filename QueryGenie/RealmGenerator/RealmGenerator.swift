@@ -2,17 +2,22 @@
 //  RealmGenerator.swift
 //
 //  Created by Anthony Miller on 1/4/17.
-//  Copyright (c) 2017 App-Order, LLC. All rights reserved.
 //
 
 import Foundation
 
 import Realm
 
-// TODO: Document
-
+/// Generates Swift files with extensions for all attributes on the Realm objects in a Realm schema.
 public struct RealmGenerator {
     
+    /// Generates the swift attribute extension files for the objects in a schema.
+    ///
+    /// - Parameters:
+    ///   - schema: The schema to generate objects extension files for.
+    ///   - url: The file url for the destination directory to save the generated files to. This `URL` 
+    ///          must be a directory.
+    /// - Throws: An `NSError` if writing the generated extensions to file fails.
     public static func generateAttributeFiles(for schema: RLMSchema, destination url: URL) throws {
         let fm = FileManager.default
         

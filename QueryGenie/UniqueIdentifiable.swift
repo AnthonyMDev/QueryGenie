@@ -3,7 +3,6 @@
 //  QueryGenie
 //
 //  Created by Anthony Miller on 2/11/16.
-//  Copyright © 2016 App-Order. All rights reserved.
 //
 
 import Foundation

@@ -1,27 +1,35 @@
 //
 //  CoreDataQueryable.swift
-//  ZRCoreData
 //
-//  Copyright (c) 2016 App-Order, LLC. All rights reserved.
+//  Created by Anthony Miller on 1/4/17.
 //
 
 import Foundation
 import CoreData
 
-// TODO: Document
-
+/// A queryable entity that executes an `NSFetchRequest`.
 public protocol CoreDataQueryable: GenericQueryable, Enumerable {
     
     associatedtype Element: NSFetchRequestResult
     
+    /// The number items to fetch in each batch for the fetch request.
     var batchSize: Int { get set }
 
+    /// The context the fetch request will be executed in.
     var context: NSManagedObjectContext { get }
+    
+    /// The entity description for the entity to be fetched.
     var entityDescription: NSEntityDescription { get }
     
+    /// The predicate to execute the fetch request with.
     var predicate: NSPredicate? { get set }
+    
+    /// The sort descriptors to execute the fetch request with.
     var sortDescriptors: [NSSortDescriptor]? { get set }
 
+    /// Creates an `NSFetchRequest` from the receiver.
+    ///
+    /// - Returns: A fetch request configured using the receiver.
     func toFetchRequest<ResultType: NSFetchRequestResult>() -> NSFetchRequest<ResultType>
     
 }
