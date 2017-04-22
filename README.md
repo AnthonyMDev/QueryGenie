@@ -96,7 +96,7 @@ extension User: UniqueIdentifiable {
 
 `QueryGenie` provides a helper class to automatically generate attribute extensions for all of your `Realm` objects. A generator for `CoreData` is planned for future release.
 
-To use the `RealmGenerator`, inlcude the `RealmGenerator` subspec in a new test target in your Xcode project.
+To use the `RealmGenerator`, inlcude the `QueryGenieRealmGenerator` pod in a new test target in your Xcode project.
 
 In that test target, you can create a test that will generate your extensions. 
 
