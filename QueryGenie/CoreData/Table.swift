@@ -8,7 +8,7 @@ import Foundation
 import CoreData
 
 // A concrete query that can be executed to fetch a collection of core data objects.
-public final struct Table<T: NSManagedObject>: TableProtocol {
+public struct Table<T: NSManagedObject>: TableProtocol {
   
   public typealias Element = T
   

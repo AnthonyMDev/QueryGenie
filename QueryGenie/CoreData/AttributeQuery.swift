@@ -8,7 +8,7 @@ import Foundation
 import CoreData
 
 /// A concrete query that can be executed to fetch a dictionary of properties on core data objects.
-public final struct AttributeQuery<T: NSDictionary>: AttributeQueryProtocol {
+public struct AttributeQuery<T: NSDictionary>: AttributeQueryProtocol {
     
     public typealias Element = T
     
