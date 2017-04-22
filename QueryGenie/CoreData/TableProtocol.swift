@@ -7,7 +7,7 @@
 import Foundation
 import CoreData
 
-// A query that can be executed to fetch a collection of core data objects.
+// An entity that represents a queryable table of objects for a type in a core data managed object context.
 public protocol TableProtocol: CoreDataQueryable {
     
 }
