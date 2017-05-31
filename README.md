@@ -1,4 +1,4 @@
-# AmazonS3RequestManager
+# QueryGenie
 [![Version](https://img.shields.io/cocoapods/v/QueryGenie.svg?style=flat)](http://cocoapods.org/pods/QueryGenie)
 [![License](https://img.shields.io/cocoapods/l/QueryGenie.svg?style=flat)](http://cocoapods.org/pods/QueryGenie)
 [![Platform](https://img.shields.io/cocoapods/p/QueryGenie.svg?style=flat)](http://cocoapods.org/pods/QueryGenie)
