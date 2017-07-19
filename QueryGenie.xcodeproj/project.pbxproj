@@ -24,7 +24,6 @@
 		92B1DFDA1E1592C7004337CF /* Enumerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD61E1592C7004337CF /* Enumerable.swift */; };
 		92B1DFDB1E1592C7004337CF /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD71E1592C7004337CF /* Queryable.swift */; };
 		92B1DFDC1E1592C7004337CF /* SortedQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD81E1592C7004337CF /* SortedQueryable.swift */; };
-		92B1DFDD1E1592C7004337CF /* GenericQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD91E1592C7004337CF /* GenericQueryable.swift */; };
 		92B1DFE11E1592D8004337CF /* ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDE1E1592D8004337CF /* ResultsProtocol.swift */; };
 		92B1DFE21E1592D8004337CF /* RealmQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */; };
 		92B1DFE31E1592D8004337CF /* Results+ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFE01E1592D8004337CF /* Results+ResultsProtocol.swift */; };
@@ -39,7 +38,6 @@
 		92B1DFF31E159776004337CF /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD11E1592B7004337CF /* Attribute.swift */; };
 		92B1DFF41E159776004337CF /* AttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD01E1592B7004337CF /* AttributeProtocol.swift */; };
 		92B1DFF51E159776004337CF /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD71E1592C7004337CF /* Queryable.swift */; };
-		92B1DFF61E159776004337CF /* GenericQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD91E1592C7004337CF /* GenericQueryable.swift */; };
 		92B1DFFA1E159776004337CF /* QueryGenie.h in Headers */ = {isa = PBXBuildFile; fileRef = 92B1DFB01E158BB9004337CF /* QueryGenie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92B1E0071E1597B5004337CF /* QueryGenieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFBB1E158BB9004337CF /* QueryGenieTests.swift */; };
 		92B1E0131E15984D004337CF /* QueryGenie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B1E0001E159776004337CF /* QueryGenie.framework */; };
@@ -106,7 +104,6 @@
 		92B1DFD61E1592C7004337CF /* Enumerable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerable.swift; sourceTree = "<group>"; };
 		92B1DFD71E1592C7004337CF /* Queryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queryable.swift; sourceTree = "<group>"; };
 		92B1DFD81E1592C7004337CF /* SortedQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedQueryable.swift; sourceTree = "<group>"; };
-		92B1DFD91E1592C7004337CF /* GenericQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericQueryable.swift; sourceTree = "<group>"; };
 		92B1DFDE1E1592D8004337CF /* ResultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsProtocol.swift; sourceTree = "<group>"; };
 		92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmQueryable.swift; sourceTree = "<group>"; };
 		92B1DFE01E1592D8004337CF /* Results+ResultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Results+ResultsProtocol.swift"; sourceTree = "<group>"; };
@@ -255,7 +252,6 @@
 				92B1DFCA1E159264004337CF /* Sortable.swift */,
 				92B1DFCB1E159264004337CF /* UniqueIdentifiable.swift */,
 				92B1DFD71E1592C7004337CF /* Queryable.swift */,
-				92B1DFD91E1592C7004337CF /* GenericQueryable.swift */,
 				92B1DFD81E1592C7004337CF /* SortedQueryable.swift */,
 				92B1DFD61E1592C7004337CF /* Enumerable.swift */,
 				92B1DFD01E1592B7004337CF /* AttributeProtocol.swift */,
@@ -435,7 +431,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Anthony Miller";
 				TargetAttributes = {
 					92B1DFAC1E158BB9004337CF = {
@@ -507,9 +503,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AllPods-Tests-QueryGenieTests_iOS/Pods-AllPods-Tests-QueryGenieTests_iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -522,13 +525,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AllPods-QueryGenie_iOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		36199E6C9D1508EDD7A6A2A8 /* [CP] Copy Pods Resources */ = {
@@ -552,13 +558,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AllPods-QueryGenie_OSX-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		84C717D559400EBDD5F8C143 /* [CP] Copy Pods Resources */ = {
@@ -582,13 +591,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AllPods-Tests-QueryGenieTests_OSX-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		92B1E00C1E1597B5004337CF /* [CP] Embed Pods Frameworks */ = {
@@ -597,9 +609,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AllPods-Tests-QueryGenieTests_OSX/Pods-AllPods-Tests-QueryGenieTests_OSX-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm-macOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-macOS/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-macOS/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -642,13 +661,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AllPods-Tests-QueryGenieTests_iOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -677,7 +699,6 @@
 				92B1E04B1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0571E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
 				92AEC58B1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */,
-				92B1DFDD1E1592C7004337CF /* GenericQueryable.swift in Sources */,
 				9214C7DC1E1D89020097D8B2 /* RealmGenerator.swift in Sources */,
 				92B1E0541E15ABD9004337CF /* RealmError.swift in Sources */,
 			);
@@ -714,7 +735,6 @@
 				92B1E04C1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0581E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
 				92AEC58C1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */,
-				92B1DFF61E159776004337CF /* GenericQueryable.swift in Sources */,
 				9214C7DD1E1D89020097D8B2 /* RealmGenerator.swift in Sources */,
 				92B1E0551E15ABD9004337CF /* RealmError.swift in Sources */,
 			);
@@ -740,7 +760,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -748,7 +770,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -797,7 +823,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -805,7 +833,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

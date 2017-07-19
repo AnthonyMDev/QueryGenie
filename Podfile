@@ -16,7 +16,7 @@ abstract_target 'AllPods' do
 
     abstract_target 'Tests' do
         
-        pod 'Nimble', '~> 5.1'
+        pod 'Nimble', '~> 7.0'
 
         target 'QueryGenieTests_iOS' do
             platform :ios, '8.0'
