@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
         
         ss.dependency 'QueryGenie/Core'
         
-        ss.dependency 'RealmSwift', '3.0.0-beta'
+        ss.dependency 'RealmSwift', '~> 3.0'
     end    
 
     s.subspec 'CoreData' do |ss|

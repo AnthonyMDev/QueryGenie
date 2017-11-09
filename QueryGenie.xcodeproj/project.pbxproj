@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1473DB08B0CA719DEC13951A /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0AEA48D33BC44207AF753B /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework */; };
 		3066026C24FFB4CD5FFF20C4 /* Pods_AllPods_QueryGenie_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0320041F9A88C17C89307AB2 /* Pods_AllPods_QueryGenie_iOS.framework */; };
+		4A31C7811FB23E09003785FD /* RealmQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */; };
+		4A31C7821FB23E0B003785FD /* RealmQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */; };
 		6CA34934C19A170F7A8EA13E /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40A600BC71F6633C169A3F2 /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework */; };
 		9214C7DC1E1D89020097D8B2 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */; };
 		9214C7DD1E1D89020097D8B2 /* RealmGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9214C7DB1E1D89020097D8B2 /* RealmGenerator.swift */; };
@@ -25,9 +27,7 @@
 		92B1DFDB1E1592C7004337CF /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD71E1592C7004337CF /* Queryable.swift */; };
 		92B1DFDC1E1592C7004337CF /* SortedQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD81E1592C7004337CF /* SortedQueryable.swift */; };
 		92B1DFE11E1592D8004337CF /* ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDE1E1592D8004337CF /* ResultsProtocol.swift */; };
-		92B1DFE21E1592D8004337CF /* RealmQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */; };
 		92B1DFE31E1592D8004337CF /* Results+ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFE01E1592D8004337CF /* Results+ResultsProtocol.swift */; };
-		92B1DFEB1E159776004337CF /* RealmQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */; };
 		92B1DFEC1E159776004337CF /* Results+ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFE01E1592D8004337CF /* Results+ResultsProtocol.swift */; };
 		92B1DFED1E159776004337CF /* UniqueIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFCB1E159264004337CF /* UniqueIdentifiable.swift */; };
 		92B1DFEE1E159776004337CF /* NSPredicateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFD21E1592B7004337CF /* NSPredicateExtensions.swift */; };
@@ -76,6 +76,8 @@
 		3EEB400549908EDF62F2207D /* Pods-AllPods-QueryGenie_OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllPods-QueryGenie_OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllPods-QueryGenie_OSX/Pods-AllPods-QueryGenie_OSX.release.xcconfig"; sourceTree = "<group>"; };
 		435349071EA747E3E0176586 /* Pods-Tests-QueryGenieTests.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-QueryGenieTests.iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-QueryGenieTests.iOS/Pods-Tests-QueryGenieTests.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		47A522377099992C664807AF /* Pods-Tests-QueryGenieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-QueryGenieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-QueryGenieTests/Pods-Tests-QueryGenieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A31C77E1FB23DA9003785FD /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A31C7801FB23DB0003785FD /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC2C5F9C569A19EB53ECC06 /* Pods_AllPods_QueryGenie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllPods_QueryGenie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE33F2B53757175FC736047 /* Pods-AllPods-Tests-QueryGenieTests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllPods-Tests-QueryGenieTests_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllPods-Tests-QueryGenieTests_iOS/Pods-AllPods-Tests-QueryGenieTests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5338EC02282F33F25F0539C9 /* Pods-Tests-QueryGenieTests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-QueryGenieTests_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-QueryGenieTests_iOS/Pods-Tests-QueryGenieTests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,8 @@
 		4FFF35EC113F4E48D1C8B58B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A31C7801FB23DB0003785FD /* Realm.framework */,
+				4A31C77E1FB23DA9003785FD /* RealmSwift.framework */,
 				3ED62DA3377597BBFB6211A4 /* Pods_import_pods_QueryGenie.framework */,
 				FAA971D9CF3115702BC3A16E /* Pods_import_pods_QueryGenieTests.framework */,
 				21B8E77A9593F31B3620F73E /* Pods_Tests_QueryGenieTests.framework */,
@@ -436,11 +440,12 @@
 				TargetAttributes = {
 					92B1DFAC1E158BB9004337CF = {
 						CreatedOnToolsVersion = 8.2;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					92B1DFB51E158BB9004337CF = {
 						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -681,10 +686,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B1E04E1E15A72D004337CF /* AttributeQueryProtocol.swift in Sources */,
-				92B1DFE21E1592D8004337CF /* RealmQueryable.swift in Sources */,
 				92B1E0421E15A6CD004337CF /* CoreDataQueryable.swift in Sources */,
 				92B1DFE31E1592D8004337CF /* Results+ResultsProtocol.swift in Sources */,
 				92B1DFCD1E159264004337CF /* UniqueIdentifiable.swift in Sources */,
+				4A31C7811FB23E09003785FD /* RealmQueryable.swift in Sources */,
 				92B1DFD51E1592B7004337CF /* NSPredicateExtensions.swift in Sources */,
 				92B1DFCC1E159264004337CF /* Sortable.swift in Sources */,
 				92B1E0481E15A6E5004337CF /* AttributeQuery.swift in Sources */,
@@ -717,10 +722,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B1E04F1E15A72D004337CF /* AttributeQueryProtocol.swift in Sources */,
-				92B1DFEB1E159776004337CF /* RealmQueryable.swift in Sources */,
 				92B1E0431E15A6CD004337CF /* CoreDataQueryable.swift in Sources */,
 				92B1DFEC1E159776004337CF /* Results+ResultsProtocol.swift in Sources */,
 				92B1DFED1E159776004337CF /* UniqueIdentifiable.swift in Sources */,
+				4A31C7821FB23E0B003785FD /* RealmQueryable.swift in Sources */,
 				92B1DFEE1E159776004337CF /* NSPredicateExtensions.swift in Sources */,
 				92B1DFEF1E159776004337CF /* Sortable.swift in Sources */,
 				92B1E0491E15A6E5004337CF /* AttributeQuery.swift in Sources */,
@@ -887,7 +892,8 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -907,7 +913,8 @@
 				PRODUCT_NAME = QueryGenie;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -915,12 +922,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FE33F2B53757175FC736047 /* Pods-AllPods-Tests-QueryGenieTests_iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = QueryGenieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnthonyMDev.QueryGenieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -928,12 +936,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0364D06C3FEB82836D096A46 /* Pods-AllPods-Tests-QueryGenieTests_iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = QueryGenieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnthonyMDev.QueryGenieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -954,7 +963,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -974,7 +983,7 @@
 				PRODUCT_NAME = QueryGenie;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -982,13 +991,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 291CAB6431B4AC75786DF97B /* Pods-AllPods-Tests-QueryGenieTests_OSX.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = QueryGenieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnthonyMDev.QueryGenieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -996,13 +1005,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AED066880078F0A1DCF1049A /* Pods-AllPods-Tests-QueryGenieTests_OSX.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				INFOPLIST_FILE = QueryGenieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AnthonyMDev.QueryGenieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
