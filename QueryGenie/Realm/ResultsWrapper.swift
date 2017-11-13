@@ -13,27 +13,23 @@ import RealmSwift
 Wrapper class for RealmSwift's `Results<Element>` class that sets the `Element` to `Object`.
  
  - Warning: This class passes through calls to all the methods and properties on `Results` except calls to
- ````
- static func bridging(from objectiveCValue: Any, with metadata: Any?) -> ResultsWrapper {
-     return ResultsWrapper(Results.bridging(from: objectiveCValue, with: metadata))
- }
+````
+ static func bridging(from objectiveCValue: Any, with metadata: Any?) -> ResultsWrapper
 ````
 and
 ````
- var bridged: (objectiveCValue: Any, metadata: Any?) {
-     return results.bridged
- }
+ var bridged: (objectiveCValue: Any, metadata: Any?)
 ````
  - Note: `Results<Element>` allows `AnyObject`, setting the `Element` to `Object`
          allows QueryGenie extensions to work with `Results`.
 */
 public final class ResultsWrapper<T> where T: Object {
     
-    /// MARK: - Instance Properties
+    // MARK: - Instance Properties
     
     public let results: Results<T>
     
-    /// MARK: - Object Life Cycle
+    // MARK: - Object Life Cycle
     
     public init(_ results: Results<T>) {
         self.results = results
@@ -48,7 +44,7 @@ public final class ResultsWrapper<T> where T: Object {
         return results.description
     }
     
-    // MARK: Fast Enumeration
+    // MARK: - Fast Enumeration
     
     /// :nodoc:
     public func countByEnumerating(with state: UnsafeMutablePointer<NSFastEnumerationState>,
@@ -82,7 +78,7 @@ public final class ResultsWrapper<T> where T: Object {
         return results.count
     }
     
-    // MARK: Index Retrieval
+    // MARK: - Index Retrieval
     
     /**
      Returns the index of the given object in the results, or `nil` if the object is not present.
@@ -130,7 +126,7 @@ public final class ResultsWrapper<T> where T: Object {
         return results.last
     }
     
-    // MARK: KVC
+    // MARK: - KVC
     
     /**
      Returns an `Array` containing the results of invoking `valueForKey(_:)` with `key` on each of the results.
@@ -163,7 +159,7 @@ public final class ResultsWrapper<T> where T: Object {
         return results.setValue(value, forKey: key)
     }
     
-    // MARK: Filtering
+    // MARK: - Filtering
     
     /**
      Returns a `ResultsWrapper` containing all objects matching the given predicate in the collection.
@@ -183,7 +179,7 @@ public final class ResultsWrapper<T> where T: Object {
         return ResultsWrapper<T>(results.filter(predicate))
     }
     
-    // MARK: Sorting
+    // MARK: - Sorting
     
     /**
      Returns a `ResultsWrapper` containing the objects represented by the results, but sorted.
@@ -217,7 +213,7 @@ public final class ResultsWrapper<T> where T: Object {
             return ResultsWrapper<T>(results.sorted(by: sortDescriptors))
     }
     
-    // MARK: Aggregate Operations
+    // MARK: - Aggregate Operations
     
     /**
      Returns the minimum (lowest) value of the given property among all the results, or `nil` if the results are empty.
@@ -263,7 +259,7 @@ public final class ResultsWrapper<T> where T: Object {
         return results.average(ofProperty: property)
     }
     
-    // MARK: Notifications
+    // MARK: - Notifications
     
     /**
      Registers a block to be called each time the collection changes.

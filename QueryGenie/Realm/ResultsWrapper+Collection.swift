@@ -2,7 +2,7 @@
 //  ResultsWrapper+Collection.swift
 //  QueryGenie
 //
-//  Created by Dominic on 11/9/17.
+//  Created by Dominic Miller on 11/9/17.
 //
 
 import Foundation
@@ -11,16 +11,12 @@ import RealmSwift
 
 extension ResultsWrapper: Collection {
     
-    // MARK: Sequence Support
-    
     public typealias Iterator = Results<T>.Iterator
     
-    /// Returns a `RLMIterator` that yields successive elements in the results.
+    /// Returns the `Iterator for the `results.
     public func makeIterator() -> ResultsWrapper.Iterator {
         return results.makeIterator()
     }
-    
-    // MARK: Collection Support
     
     /// The position of the first element in a non-empty collection.
     /// Identical to endIndex in an empty collection.
@@ -48,4 +44,5 @@ extension ResultsWrapper: Collection {
         NotificationToken {
             return results._observe(block)
     }
+    
 }
