@@ -1,8 +1,8 @@
 //
-//  ResultsWrapper+ResultsProtocol.swift
+//  Results+ResultsProtocol.swift
 //  QueryGenie
 //
-//  Created by Dominic Miller on 11/8/17.
+//  Created by Dominic on 11/9/17.
 //
 
 import Foundation
@@ -11,23 +11,27 @@ import RealmSwift
 
 private var _sortDescriptorsKey = "QueryGenie.sortDescriptors"
 
-extension ResultsWrapper: ResultsProtocol {
-
+extension Results: ResultsProtocol {
+    
     // MARK: - Queryable
     
-    public final func objects() -> AnyCollection<T> {
-        return AnyCollection(results)
+    public func count() -> Int {
+        return count
     }
     
+    public func objects() -> AnyCollection<Element> {
+        return AnyCollection(self)
+    }
+
     // MARK: - SortedQueryable
     
-    public func sorted(by keyPath: String, ascending: Bool) -> ResultsWrapper<T> {
+    public func sorted(by keyPath: String, ascending: Bool) -> Results<Element> {
         let newSort = SortDescriptor(keyPath: keyPath, ascending: ascending)
         
         var sortDescriptors: [SortDescriptor] = self.sortDescriptors ?? []
         sortDescriptors.append(newSort)
         
-        let newResults = ResultsWrapper<T>(results.sorted(by: sortDescriptors))
+        let newResults = sorted(by: sortDescriptors)
         newResults.sortDescriptors = sortDescriptors
         return newResults
     }
@@ -40,4 +44,75 @@ extension ResultsWrapper: ResultsProtocol {
             objc_setAssociatedObject(self, &_sortDescriptorsKey, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

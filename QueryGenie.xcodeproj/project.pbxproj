@@ -9,12 +9,8 @@
 /* Begin PBXBuildFile section */
 		1473DB08B0CA719DEC13951A /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0AEA48D33BC44207AF753B /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework */; };
 		3066026C24FFB4CD5FFF20C4 /* Pods_AllPods_QueryGenie_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0320041F9A88C17C89307AB2 /* Pods_AllPods_QueryGenie_iOS.framework */; };
-		4A25FCAD1FBA4E8100F447E1 /* ResultsWrapper+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAA1FBA4E8000F447E1 /* ResultsWrapper+Collection.swift */; };
-		4A25FCAE1FBA4E8100F447E1 /* ResultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAB1FBA4E8000F447E1 /* ResultsWrapper.swift */; };
-		4A25FCAF1FBA4E8100F447E1 /* ResultsWrapper+ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAC1FBA4E8000F447E1 /* ResultsWrapper+ResultsProtocol.swift */; };
-		4A25FCB01FBA4E8A00F447E1 /* ResultsWrapper+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAA1FBA4E8000F447E1 /* ResultsWrapper+Collection.swift */; };
-		4A25FCB11FBA4E9000F447E1 /* ResultsWrapper+ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAC1FBA4E8000F447E1 /* ResultsWrapper+ResultsProtocol.swift */; };
-		4A25FCB21FBA4E9900F447E1 /* ResultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAB1FBA4E8000F447E1 /* ResultsWrapper.swift */; };
+		4A25FCAE1FBA4E8100F447E1 /* Results+ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAB1FBA4E8000F447E1 /* Results+ResultsProtocol.swift */; };
+		4A25FCB21FBA4E9900F447E1 /* Results+ResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25FCAB1FBA4E8000F447E1 /* Results+ResultsProtocol.swift */; };
 		4A31C7811FB23E09003785FD /* RealmQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */; };
 		4A31C7821FB23E0B003785FD /* RealmQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */; };
 		6CA34934C19A170F7A8EA13E /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40A600BC71F6633C169A3F2 /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework */; };
@@ -80,9 +76,7 @@
 		3EEB400549908EDF62F2207D /* Pods-AllPods-QueryGenie_OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllPods-QueryGenie_OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllPods-QueryGenie_OSX/Pods-AllPods-QueryGenie_OSX.release.xcconfig"; sourceTree = "<group>"; };
 		435349071EA747E3E0176586 /* Pods-Tests-QueryGenieTests.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-QueryGenieTests.iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-QueryGenieTests.iOS/Pods-Tests-QueryGenieTests.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		47A522377099992C664807AF /* Pods-Tests-QueryGenieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-QueryGenieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests-QueryGenieTests/Pods-Tests-QueryGenieTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A25FCAA1FBA4E8000F447E1 /* ResultsWrapper+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResultsWrapper+Collection.swift"; sourceTree = "<group>"; };
-		4A25FCAB1FBA4E8000F447E1 /* ResultsWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsWrapper.swift; sourceTree = "<group>"; };
-		4A25FCAC1FBA4E8000F447E1 /* ResultsWrapper+ResultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResultsWrapper+ResultsProtocol.swift"; sourceTree = "<group>"; };
+		4A25FCAB1FBA4E8000F447E1 /* Results+ResultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Results+ResultsProtocol.swift"; sourceTree = "<group>"; };
 		4A31C77E1FB23DA9003785FD /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A31C7801FB23DB0003785FD /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC2C5F9C569A19EB53ECC06 /* Pods_AllPods_QueryGenie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllPods_QueryGenie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,9 +295,7 @@
 		92B1DFCE1E159286004337CF /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				4A25FCAB1FBA4E8000F447E1 /* ResultsWrapper.swift */,
-				4A25FCAA1FBA4E8000F447E1 /* ResultsWrapper+Collection.swift */,
-				4A25FCAC1FBA4E8000F447E1 /* ResultsWrapper+ResultsProtocol.swift */,
+				4A25FCAB1FBA4E8000F447E1 /* Results+ResultsProtocol.swift */,
 				92B1DFDE1E1592D8004337CF /* ResultsProtocol.swift */,
 				92B1DFDF1E1592D8004337CF /* RealmQueryable.swift */,
 				92B1E0531E15ABD9004337CF /* RealmError.swift */,
@@ -694,9 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B1E04E1E15A72D004337CF /* AttributeQueryProtocol.swift in Sources */,
-				4A25FCAD1FBA4E8100F447E1 /* ResultsWrapper+Collection.swift in Sources */,
 				92B1E0421E15A6CD004337CF /* CoreDataQueryable.swift in Sources */,
-				4A25FCAF1FBA4E8100F447E1 /* ResultsWrapper+ResultsProtocol.swift in Sources */,
 				92B1DFCD1E159264004337CF /* UniqueIdentifiable.swift in Sources */,
 				4A31C7811FB23E09003785FD /* RealmQueryable.swift in Sources */,
 				92B1DFD51E1592B7004337CF /* NSPredicateExtensions.swift in Sources */,
@@ -710,7 +700,7 @@
 				92B1DFDB1E1592C7004337CF /* Queryable.swift in Sources */,
 				92B1E0451E15A6DC004337CF /* TableProtocol.swift in Sources */,
 				92B1E0511E15A8F6004337CF /* Error.swift in Sources */,
-				4A25FCAE1FBA4E8100F447E1 /* ResultsWrapper.swift in Sources */,
+				4A25FCAE1FBA4E8100F447E1 /* Results+ResultsProtocol.swift in Sources */,
 				92B1E04B1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0571E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
 				92AEC58B1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */,
@@ -732,7 +722,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B1E04F1E15A72D004337CF /* AttributeQueryProtocol.swift in Sources */,
-				4A25FCB01FBA4E8A00F447E1 /* ResultsWrapper+Collection.swift in Sources */,
 				92B1E0431E15A6CD004337CF /* CoreDataQueryable.swift in Sources */,
 				92B1DFED1E159776004337CF /* UniqueIdentifiable.swift in Sources */,
 				4A31C7821FB23E0B003785FD /* RealmQueryable.swift in Sources */,
@@ -746,13 +735,12 @@
 				92B1DFF41E159776004337CF /* AttributeProtocol.swift in Sources */,
 				92B1DFF51E159776004337CF /* Queryable.swift in Sources */,
 				92B1E0461E15A6DC004337CF /* TableProtocol.swift in Sources */,
-				4A25FCB11FBA4E9000F447E1 /* ResultsWrapper+ResultsProtocol.swift in Sources */,
 				92B1E0521E15A8F6004337CF /* Error.swift in Sources */,
 				92B1E04C1E15A6ED004337CF /* Table.swift in Sources */,
 				92B1E0581E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */,
 				92AEC58C1E4D02B30036F9E3 /* UniqueIdentifiable+NSManagedObject.swift in Sources */,
 				9214C7DD1E1D89020097D8B2 /* RealmGenerator.swift in Sources */,
-				4A25FCB21FBA4E9900F447E1 /* ResultsWrapper.swift in Sources */,
+				4A25FCB21FBA4E9900F447E1 /* Results+ResultsProtocol.swift in Sources */,
 				92B1E0551E15ABD9004337CF /* RealmError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

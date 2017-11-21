@@ -8,8 +8,8 @@ import Foundation
 
 import RealmSwift
 
-/// A query that can be executed to retrieve Realm `Objects`.
-public protocol RealmQueryable: Queryable where Element: Object {
+/// A query that can be used with the `Realm` framework.
+public protocol RealmQueryable: Queryable {
     
     var realm: Realm? { get }
     
@@ -17,13 +17,8 @@ public protocol RealmQueryable: Queryable where Element: Object {
     
 }
 
-// MARK: - Enumerable
-
-extension RealmQueryable {
-    
-    public func count() -> Int {
-        return Int(objects().count)        
-    }
+/// Queries used to retrieve Realm `Objects`.
+extension RealmQueryable where Element: Object {
     
     public func firstOrCreated(_ predicateClosure: (Self.Element.Type) -> NSComparisonPredicate) throws -> Self.Element {
         let predicate = predicateClosure(Self.Element.self)
@@ -60,3 +55,4 @@ extension RealmQueryable {
     }
     
 }
+
