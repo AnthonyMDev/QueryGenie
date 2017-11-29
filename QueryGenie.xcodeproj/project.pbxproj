@@ -59,6 +59,8 @@
 		92B1E0571E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1E0561E15C102004337CF /* UniqueIdentifiable+RealmObject.swift */; };
 		92B1E0581E15C102004337CF /* UniqueIdentifiable+RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B1E0561E15C102004337CF /* UniqueIdentifiable+RealmObject.swift */; };
 		A4213E8D8A33A79B076C1212 /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF0234C427FE3DCB7E56D2B /* Pods_AllPods_Tests_QueryGenieTests_OSX.framework */; };
+		B65969641FCE10FA00C9334C /* ResultsQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65969631FCE10FA00C9334C /* ResultsQueryable.swift */; };
+		B65969651FCE10FA00C9334C /* ResultsQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65969631FCE10FA00C9334C /* ResultsQueryable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,7 @@
 		92B1E0561E15C102004337CF /* UniqueIdentifiable+RealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UniqueIdentifiable+RealmObject.swift"; sourceTree = "<group>"; };
 		B28109E8D9110E48DE0D27A6 /* Pods-AllPods-Tests-QueryGenieTests_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllPods-Tests-QueryGenieTests_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllPods-Tests-QueryGenieTests_iOS/Pods-AllPods-Tests-QueryGenieTests_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B54EA944BC9AA1B0E6723169 /* Pods_AllPods_Tests_QueryGenieTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AllPods_Tests_QueryGenieTests_iOS.framework; path = "../Debug-iphonesimulator/Pods_AllPods_Tests_QueryGenieTests_iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65969631FCE10FA00C9334C /* ResultsQueryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsQueryable.swift; sourceTree = "<group>"; };
 		BDCE734163A0A49448C8EB08 /* Pods-AllPods-Tests-QueryGenieTests_OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllPods-Tests-QueryGenieTests_OSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllPods-Tests-QueryGenieTests_OSX/Pods-AllPods-Tests-QueryGenieTests_OSX.debug.xcconfig"; sourceTree = "<group>"; };
 		DAD2F246D485586EF6BCDB0C /* Pods-AllPods-Tests-QueryGenieTests_OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllPods-Tests-QueryGenieTests_OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllPods-Tests-QueryGenieTests_OSX/Pods-AllPods-Tests-QueryGenieTests_OSX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +219,7 @@
 				92B1DFCA1E159264004337CF /* Sortable.swift */,
 				92B1DFCB1E159264004337CF /* UniqueIdentifiable.swift */,
 				92B1DFD71E1592C7004337CF /* Queryable.swift */,
+				B65969631FCE10FA00C9334C /* ResultsQueryable.swift */,
 				92B1DFD81E1592C7004337CF /* SortedQueryable.swift */,
 				92B1DFD61E1592C7004337CF /* Enumerable.swift */,
 				92B1DFD01E1592B7004337CF /* AttributeProtocol.swift */,
@@ -655,6 +659,7 @@
 				92B1DFDC1E1592C7004337CF /* SortedQueryable.swift in Sources */,
 				92B1DFE11E1592D8004337CF /* ResultsProtocol.swift in Sources */,
 				92B1DFDA1E1592C7004337CF /* Enumerable.swift in Sources */,
+				B65969641FCE10FA00C9334C /* ResultsQueryable.swift in Sources */,
 				92B1DFD41E1592B7004337CF /* Attribute.swift in Sources */,
 				92B1DFD31E1592B7004337CF /* AttributeProtocol.swift in Sources */,
 				92B1DFDB1E1592C7004337CF /* Queryable.swift in Sources */,
@@ -691,6 +696,7 @@
 				92B1DFF01E159776004337CF /* SortedQueryable.swift in Sources */,
 				92B1DFF11E159776004337CF /* ResultsProtocol.swift in Sources */,
 				92B1DFF21E159776004337CF /* Enumerable.swift in Sources */,
+				B65969651FCE10FA00C9334C /* ResultsQueryable.swift in Sources */,
 				92B1DFF31E159776004337CF /* Attribute.swift in Sources */,
 				92B1DFF41E159776004337CF /* AttributeProtocol.swift in Sources */,
 				92B1DFF51E159776004337CF /* Queryable.swift in Sources */,

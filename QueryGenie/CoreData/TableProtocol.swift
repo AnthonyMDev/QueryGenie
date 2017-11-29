@@ -87,7 +87,7 @@ extension TableProtocol where Self.Element: NSManagedObject {
 }
 
 /*
- *  MARK: - GenericQueryable
+ *  MARK: - Queryable
  */
 
 extension TableProtocol {

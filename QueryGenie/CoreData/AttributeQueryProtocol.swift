@@ -31,7 +31,7 @@ extension AttributeQueryProtocol {
 }
 
 /*
- *  MARK: - GenericQueryable
+ *  MARK: - Queryable
  */
 
 extension AttributeQueryProtocol {

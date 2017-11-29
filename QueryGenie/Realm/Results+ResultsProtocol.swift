@@ -14,15 +14,14 @@ private var _sortDescriptorsKey = "QueryGenie.sortDescriptors"
 extension Results: ResultsProtocol {
     
     // MARK: - Queryable
-    
     public func count() -> Int {
         return count
     }
     
-    public func objects() -> AnyCollection<Element> {
-        return AnyCollection(self)
+    public func first() -> Element? {
+        return first
     }
-
+    
     // MARK: - SortedQueryable
     
     public func sorted(by keyPath: String, ascending: Bool) -> Results<Element> {

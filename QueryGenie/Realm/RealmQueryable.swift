@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 /// A query that can be used with the `Realm` framework.
-public protocol RealmQueryable: Queryable {
+public protocol RealmQueryable: ResultsQueryable {
     
     var realm: Realm? { get }
     
@@ -18,7 +18,7 @@ public protocol RealmQueryable: Queryable {
 }
 
 /// Queries used to retrieve Realm `Objects`.
-extension RealmQueryable where Element: Object {
+extension RealmQueryable where Self.Element: Object {
     
     public func firstOrCreated(_ predicateClosure: (Self.Element.Type) -> NSComparisonPredicate) throws -> Self.Element {
         let predicate = predicateClosure(Self.Element.self)

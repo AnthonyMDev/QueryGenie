@@ -8,7 +8,7 @@ import Foundation
 import RealmSwift
 
 /// A query that is backed by a Realm `Results` object.
-public protocol ResultsProtocol: RealmQueryable, SortedQueryable {
+public protocol ResultsProtocol: RealmQueryable {
     
     func sum<U: AddableType>(ofProperty: String) -> U
     
