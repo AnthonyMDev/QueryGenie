@@ -1,11 +1,11 @@
 //
 //  Results+ResultsProtocol.swift
+//  QueryGenie
 //
-//  Created by Anthony Miller on 12/29/16.
+//  Created by Dominic on 11/9/17.
 //
 
 import Foundation
-import ObjectiveC
 
 import RealmSwift
 
@@ -13,25 +13,24 @@ private var _sortDescriptorsKey = "QueryGenie.sortDescriptors"
 
 extension Results: ResultsProtocol {
     
-    public func first() -> T? {
-        return self.first
-    }    
-    
-    /*
-     *  MARK: - GenericQueryable
-     */
-    
-    public final func objects() -> AnyCollection<Element> {
-        return AnyCollection(self)
+    // MARK: - Queryable
+    public func count() -> Int {
+        return count
     }
     
-    public func sorted(by keyPath: String, ascending: Bool) -> Results<T> {
+    public func first() -> Element? {
+        return first
+    }
+    
+    // MARK: - SortedQueryable
+    
+    public func sorted(by keyPath: String, ascending: Bool) -> Results<Element> {
         let newSort = SortDescriptor(keyPath: keyPath, ascending: ascending)
         
         var sortDescriptors: [SortDescriptor] = self.sortDescriptors ?? []
         sortDescriptors.append(newSort)
         
-        let newResults = self.sorted(by: sortDescriptors)
+        let newResults = sorted(by: sortDescriptors)
         newResults.sortDescriptors = sortDescriptors
         return newResults
     }

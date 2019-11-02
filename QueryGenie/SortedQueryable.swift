@@ -30,7 +30,7 @@ extension SortedQueryable {
     ///   - attribute: The attribute to sort the query by.
     ///   - ascending: `true` to sort ascending. `false` to sort descending.
     /// - Returns: A sorted copy of the receiver.
-    public final func sorted<A: AttributeProtocol>(by attribute: A, ascending: Bool) -> Self {
+    public func sorted<A: AttributeProtocol>(by attribute: A, ascending: Bool) -> Self {
         return sorted(by: attribute.___name, ascending: ascending)
     }
     

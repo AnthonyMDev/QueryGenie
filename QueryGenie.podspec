@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
-    s.name              = "QueryGenie"
-    s.version           = "1.0.0"
-    s.summary           = "A lightweight framework for creating type-safe queries. With out-of-the-box support for CoreData and Realm."
+    s.name              = 'QueryGenie'
+    s.version           = '1.1.0'
+    s.summary           = 'A lightweight framework for creating type-safe queries. With out-of-the-box support for CoreData and Realm.'
 
-    s.homepage          = "https://github.com/AnthonyMDev/QueryGenie"
+    s.homepage          = 'https://github.com/AnthonyMDev/QueryGenie'
     s.license           = { :type => 'MIT', :file => 'LICENSE' }
-    s.author            = { "Anthony Miller" => "AnthonyMDev@gmail.com" }
+    s.author            = { 'Anthony Miller' => 'AnthonyMDev@gmail.com' }
     s.social_media_url  = 'https://twitter.com/AnthonyMDev'
     
-    s.source            = { :git => "https://github.com/AnthonyMDev/QueryGenie.git", :tag => s.version.to_s }
+    s.source            = { :git => 'https://github.com/AnthonyMDev/QueryGenie.git', :tag => s.version.to_s }
     s.requires_arc      = true
     
     s.ios.deployment_target     = '8.0'
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
         
         ss.dependency 'QueryGenie/Core'
         
-        ss.dependency 'RealmSwift', '~> 2.4'
+        ss.dependency 'RealmSwift', '~> 3.0'
     end    
 
     s.subspec 'CoreData' do |ss|

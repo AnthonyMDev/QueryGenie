@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
 
     s.source_files = 'QueryGenie/RealmGenerator/*.swift'
         
-    s.dependency 'Realm', '~> 2.1'
+    s.dependency 'Realm', '~> 3.0'
 
 end

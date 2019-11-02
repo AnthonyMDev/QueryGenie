@@ -8,9 +8,7 @@ import Foundation
 import CoreData
 
 /// A queryable entity that executes an `NSFetchRequest`.
-public protocol CoreDataQueryable: GenericQueryable, Enumerable {
-    
-    associatedtype Element: NSFetchRequestResult
+public protocol CoreDataQueryable: Queryable, Enumerable where Element: NSFetchRequestResult {
     
     /// The number items to fetch in each batch for the fetch request.
     var batchSize: Int { get set }
@@ -40,7 +38,7 @@ public protocol CoreDataQueryable: GenericQueryable, Enumerable {
 
 extension CoreDataQueryable {
     
-    public final func filter(_ predicate: NSPredicate) -> Self {
+    public func filter(_ predicate: NSPredicate) -> Self {
         var clone = self
         
         if let existingPredicate = clone.predicate {
@@ -54,7 +52,7 @@ extension CoreDataQueryable {
     }
     
     
-    public final func count() -> Int {
+    public func count() -> Int {
         do {
             let count = try self.context.count(for: self.toFetchRequest() as NSFetchRequest<Self.Element>)
             return count == NSNotFound ? 0 : count
@@ -72,27 +70,27 @@ extension CoreDataQueryable {
 
 extension CoreDataQueryable {
     
-    public final func sum<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
+    public func sum<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
         let attribute = closure(Self.Element.self)
         return try self.aggregate(withFunctionName: "sum", attribute: attribute)
     }
     
-    public final func min<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
+    public func min<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
         let attribute = closure(Self.Element.self)
         return try self.aggregate(withFunctionName: "min", attribute: attribute)
     }
     
-    public final func max<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
+    public func max<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
         let attribute = closure(Self.Element.self)
         return try self.aggregate(withFunctionName: "max", attribute: attribute)
     }
 
-    public final func average<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
+    public func average<U>(_ closure: (Self.Element.Type) -> Attribute<U>) throws -> U {
         let attribute = closure(Self.Element.self)
         return try self.aggregate(withFunctionName: "average", attribute: attribute)
     }
     
-    private final func aggregate<U>(withFunctionName functionName: String, attribute: Attribute<U>) throws -> U {
+    private func aggregate<U>(withFunctionName functionName: String, attribute: Attribute<U>) throws -> U {
         let attributeDescription = self.entityDescription.attributesByName[attribute.___name]!
         
         let keyPathExpression = NSExpression(forKeyPath: attribute.___name)

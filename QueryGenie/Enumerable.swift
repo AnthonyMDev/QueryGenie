@@ -20,7 +20,7 @@ extension Enumerable {
     ///
     /// - Parameter count: The number of items to skip.
     /// - Returns: A copy of the receiver with the given offset.
-    public final func skip(_ count: Int) -> Self {
+    public func skip(_ count: Int) -> Self {
         var clone = self
         clone.offset = count
         
@@ -31,7 +31,7 @@ extension Enumerable {
     ///
     /// - Parameter count: The number of items to take.
     /// - Returns: A copy of the receiver with the given limit.
-    public final func take(_ count: Int) -> Self {
+    public func take(_ count: Int) -> Self {
         var clone = self
         clone.limit = count
         

@@ -107,6 +107,10 @@ public struct RealmGenerator {
     }
     
     private static func valueType(for property: RLMProperty) -> String {
+        if property.array {
+            return "List<\(property.objectClassName ?? "Any")>"
+        }
+        
         switch property.type {
         case .int: return "Int"
         case .bool: return "Bool"
@@ -117,7 +121,6 @@ public struct RealmGenerator {
         case .any: return "Any"
         case .date: return "Date"
         case .object: return property.objectClassName ?? "Any"
-        case .array: return "List<\(property.objectClassName ?? "Any")>"
         case .linkingObjects: return "LinkingObjects<\(property.objectClassName ?? "Any")>"
         }
     }
