@@ -18,7 +18,7 @@ A framework for creating and executing type-safe queries in Swift. Inspired by Q
 
 ### Attribute Creation
 
-To use `QueryGenie`, you first need to add extensions to your model objects providing attributes for all queryable propeties on your models. For `Realm` models, this can be done simply using the `RealmGenerator`. A generator for `CoreData` models is planned for future release. 
+To use `QueryGenie`, you first need to add extensions to your model objects providing attributes for all queryable properties on your models. For `Realm` models, this can be done simply using the `RealmGenerator`. A generator for `CoreData` models is planned for future release. 
 
 An extension for a `User` model might look as follows:
 
