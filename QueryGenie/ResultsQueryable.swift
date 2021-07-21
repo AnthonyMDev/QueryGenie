@@ -1,13 +1,15 @@
 //
-//  Queryable.swift
+//  ResultsQueryable.swift
 //
 //  Created by Anthony Miller on 12/28/16.
 //
 
 import Foundation
 
+import RealmSwift
+
 /// A `Sequence` that can be queried using `NSPredicate` filters.
-public protocol Queryable: Sequence {
+public protocol ResultsQueryable: Collection {
     
     /// Filters the query items using the given `NSPredicate`.
     ///
@@ -18,15 +20,21 @@ public protocol Queryable: Sequence {
     /// The count of items currently returned by the query.
     func count() -> Int
     
-    /// Executes the query.
-    ///
-    /// - Returns: A collection of the items resulting from the query.
-    func objects() -> AnyCollection<Element>
-    
     /// Executes the query, taking the first item in the query.
     ///
     /// - Returns: The first item resulting from the query.
     func first() -> Self.Element?
+    
+    /// Sorts the query by the given key path.
+    ///
+    /// - Note: The implementation of this func should accept multiple calls to this function and sort the query by each
+    ///         of the given sort parameters in the order they were called.
+    ///
+    /// - Parameters:
+    ///   - keyPath: The key path on objects for the query to sort the query by.
+    ///   - ascending: `true` to sort ascending, `false` to sort descending.
+    /// - Returns: A copy of the query mutated to sort by the given key path.
+    func sorted(by keyPath: String, ascending: Bool) -> Self
     
 }
 
@@ -34,7 +42,7 @@ public protocol Queryable: Sequence {
  *  MARK: - Filtering
  */
 
-extension Queryable {
+extension ResultsQueryable where Self.Element: Object {
     
     public func filter(_ predicateClosure: (Self.Element.Type) -> NSPredicate) -> Self {
         return self.filter(predicateClosure(Self.Element.self))
@@ -50,7 +58,7 @@ extension Queryable {
     
 }
 
-extension Queryable where Self.Element: UniqueIdentifiable, Self.Element.UniqueIdentifierType == String {
+extension ResultsQueryable where Self.Element: UniqueIdentifiable, Self.Element.UniqueIdentifierType == String, Self.Element: Object {
     
     /// Finds the object of the `Element` type with the given unique identifier, if one exists.
     ///
@@ -76,7 +84,17 @@ extension Queryable where Self.Element: UniqueIdentifiable, Self.Element.UniqueI
  *  MARK: - Ordering
  */
 
-extension Queryable where Self: SortedQueryable {
+extension ResultsQueryable where Self.Element: Object {
+    
+    /// Sorts the query by an attribute.
+    ///
+    /// - Parameters:
+    ///   - attribute: The attribute to sort the query by.
+    ///   - ascending: `true` to sort ascending. `false` to sort descending.
+    /// - Returns: A sorted copy of the receiver.
+    public func sorted<A: AttributeProtocol>(by attribute: A, ascending: Bool) -> Self {
+        return sorted(by: attribute.___name, ascending: ascending)
+    }
     
     /// Sorts the query by an attribute.
     ///
@@ -94,27 +112,7 @@ extension Queryable where Self: SortedQueryable {
  *  MARK: - Any/None
  */
 
-extension Queryable {
-    
-    /// Determines if any items match the given query.
-    ///
-    /// - Parameter predicateClosure: The closure returning a predicate to filter the query by.
-    /// - Returns: `true` if any items match the query, otherwise `false`.
-    public func any(_ predicateClosure: (Self.Element.Type) -> NSPredicate) -> Bool {
-        return !self.filter(predicateClosure(Self.Element.self)).isEmpty
-    }
-    
-    /// Determines if no items match the given query.
-    ///
-    /// - Parameter predicateClosure: The closure returning a predicate to filter the query by.
-    /// - Returns: `false` if any items match the query, otherwise `true`.
-    public func none(_ predicateClosure: (Self.Element.Type) -> NSPredicate) -> Bool {
-        return self.filter(predicateClosure(Self.Element.self)).isEmpty
-    }
-    
-}
-
-extension Queryable where Self: Enumerable {
+extension ResultsQueryable where Self: Results<Object> {
     
     /// Determines if any items match the given query.
     ///
@@ -138,18 +136,10 @@ extension Queryable where Self: Enumerable {
  *  MARK: - First
  */
 
-extension Queryable {
+extension ResultsQueryable where Self: Results<Object> {
     
-    public func first() -> Self.Element? {
-        return self.objects().first
-    }
-    
-}
-
-extension Queryable where Self: Enumerable {
-    
-    public func first() -> Self.Element? {
-        return self.take(1).objects().first
+    public func objects() -> AnyCollection<Element> {
+        return AnyCollection(self)
     }
     
 }
@@ -158,9 +148,9 @@ extension Queryable where Self: Enumerable {
  *  MARK: - Sequence
  */
 
-extension Queryable {
+extension ResultsQueryable where Self: Results<Object> {
     
-    public func makeIterator() -> AnyIterator<Self.Element> {
+    public func makeIterator() -> AnyIterator<Element> {
         return AnyIterator(self.objects().makeIterator())
     }
     
@@ -170,7 +160,7 @@ extension Queryable {
  *  MARK: - Is Empty
  */
 
-extension Queryable {
+extension ResultsQueryable {
     
     public var isEmpty: Bool {
         return count() == 0
@@ -178,7 +168,7 @@ extension Queryable {
     
 }
 
-extension Queryable where Self: Enumerable {
+extension ResultsQueryable where Self: Enumerable {
     
     public var isEmpty: Bool {
         return take(1).count() == 0
@@ -186,7 +176,7 @@ extension Queryable where Self: Enumerable {
     
 }
 
-extension Collection where Self: Queryable {
+extension Collection where Self: ResultsQueryable {
     
     public var isEmpty: Bool {
         return count() == 0
@@ -194,10 +184,11 @@ extension Collection where Self: Queryable {
     
 }
 
-extension Collection where Self: Queryable & Enumerable {
+extension Collection where Self: ResultsQueryable & Enumerable {
     
     public var isEmpty: Bool {
         return take(1).count() == 0
     }
     
 }
+
